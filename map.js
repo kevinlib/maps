@@ -10,20 +10,20 @@ var url = "fg_data.geojson"
 map.on('load', function () {
     map.addSource('points', {type : 'geojson', data: url});
 
-    map.loadImage('svgs/marker-15.svg', function(error, image) {
-        if (error) throw error;
-    map.addImage('maki', image);
+    // map.loadImage('svgs/marker-15.svg', function(error, image) {
+    //    if (error) throw error;
+    //map.addImage('maki', image);
 
     map.addLayer({
       "id": "points",
       "type": "symbol",
       "source": "points",
       "layout": {
-        "icon-image": "maki",
+        "icon-image": "marker-15",
         "icon-size": 1.5
       }
       });
-    });
+    // });
 
   map.on('click', function(e) {
     var features = map.queryRenderedFeatures(e.point, {
