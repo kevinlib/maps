@@ -1,7 +1,7 @@
 mapboxgl.accessToken = 'pk.eyJ1Ijoia2V2aW5saWIiLCJhIjoiY2o5N2xvZzJqMDhycjJ3bnI3aW83bW5idCJ9.Wcwr8E1gBxzmFUX037G5Rw';
 var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/mapbox/basic-v9',
+    style: 'mapbox://styles/kevinlib/cjidj1sf81djb2ro8h83xmzjs',
     center: [-83.74, 42.28], // starting position
     zoom: 10 // starting zoom
 });
@@ -9,18 +9,12 @@ var map = new mapboxgl.Map({
 var url = "fg_data.geojson"
 map.on('load', function () {
     map.addSource('points', {type : 'geojson', data: url});
-
-    // map.loadImage('svgs/marker-15.svg', function(error, image) {
-    //    if (error) throw error;
-    //map.addImage('maki', image);
-
     map.addLayer({
       "id": "points",
       "type": "symbol",
       "source": "points",
       "layout": {
-        "icon-image": "marker-15",
-        "icon-size": 1.5
+        "icon-image": "marker-editor"
       }
       });
     // });
